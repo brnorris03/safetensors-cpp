@@ -152,8 +152,7 @@ int main(int argc, char **argv) {
     safetensors::tensor_t tensor;
     st.tensors.at(i, &tensor);
 
-    std::cout << key << ": "
-              << safetensors::get_dtype_str(tensor.dtype) << " ";
+    std::cout << key << ": " << safetensors::get_dtype_str(tensor.dtype) << " ";
     std::cout << "[";
     for (size_t i = 0; i < tensor.shape.size(); i++) {
       if (i > 0) {
@@ -163,9 +162,8 @@ int main(int argc, char **argv) {
     }
     std::cout << "]\n";
 
-    std::cout << "  data_offsets["
-              << std::to_string(tensor.data_offsets[0]) << ", "
-              << std::to_string(tensor.data_offsets[1]) << "]\n";
+    std::cout << "  data_offsets[" << std::to_string(tensor.data_offsets[0])
+              << ", " << std::to_string(tensor.data_offsets[1]) << "]\n";
     std::cout << "  " << to_string_snipped(tensor, databuffer) << "\n";
   }
 

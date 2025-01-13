@@ -1,3 +1,5 @@
+CXX ?= g++
+CXX_FLAGS = -std=c++17 -O1 -g -Wall -Wextra -Wpedantic -Werror -Wno-unused-parameter -fno-rtti -fno-exceptions 
+
 all:
-	clang++ -fno-rtti -fno-exceptions -O1 -g -o example example.cc
-	#clang -O1 -g -o example-c example-c.c
+	${CXX} ${CXX_FLAGS} -o example example.cc
